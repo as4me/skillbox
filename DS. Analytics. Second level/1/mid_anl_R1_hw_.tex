@@ -173,13 +173,53 @@
 
 2.1. Сколько вылетов из аэропорта А было зафиксировано в среду?
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights\_d[}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 100
+\end{verbatim}
+
 2.2. На сколько число вылетов во вторник больше числа прилетов во
 вторник?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights\_d[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ flights\_a[}\DecValTok{2}\NormalTok{] }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
 
 2.3. Во сколько раз число вылетов в воскресенье больше числа прилетов в
 воскресенье?
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights\_d[}\DecValTok{7}\NormalTok{] }\SpecialCharTok{/}\NormalTok{ flights\_a[}\DecValTok{7}\NormalTok{] }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7638889
+\end{verbatim}
+
 2.4. Сколько всего вылетов из аэропорта А было зафиксировано за неделю?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(flights\_d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1115
+\end{verbatim}
 
 \hypertarget{ux437ux430ux434ux430ux43dux438ux435-3}{%
 \subsection{Задание 3}\label{ux437ux430ux434ux430ux43dux438ux435-3}}
@@ -198,15 +238,71 @@
 \tightlist
 \item
   Сколько всего кошек было взвешено?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(cats)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 8
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
 \item
   Какой вес был у самой тяжелой кошки? А у легкой?
 \end{itemize}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which.min}\NormalTok{(cats)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which.max}\NormalTok{(cats)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
 3.2. Создайте вектор \texttt{cats.round} со значениями весов кошек в
 килограммах, округленных в меньшую сторону.
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cats.round }\OtherTok{\textless{}{-}} \FunctionTok{floor}\NormalTok{(cats)}
+\NormalTok{cats.round}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 3 1 1 2 2 3 2
+\end{verbatim}
+
 3.3. Создайте вектор \texttt{cats\_g} со значением весов кошек в
 граммах.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cats\_g }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(cats)}
+\NormalTok{cats\_g}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 22.685
+\end{verbatim}
 
 \hypertarget{ux437ux430ux434ux430ux43dux438ux435-4}{%
 \subsection{Задание 4}\label{ux437ux430ux434ux430ux43dux438ux435-4}}
@@ -219,8 +315,14 @@
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{nums }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"2,6"}\NormalTok{, }\StringTok{"2,71"}\NormalTok{, }\StringTok{"3,5"}\NormalTok{, }\StringTok{"4,8"}\NormalTok{, }\StringTok{"8,9"}\NormalTok{, }\StringTok{"9,21"}\NormalTok{)}
+\NormalTok{correct }\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{","}\NormalTok{, }\StringTok{"."}\NormalTok{, nums))}
+\NormalTok{correct}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 2.60 2.71 3.50 4.80 8.90 9.21
+\end{verbatim}
 
 \hypertarget{ux437ux430ux434ux430ux43dux438ux435-5}{%
 \subsection{Задание 5}\label{ux437ux430ux434ux430ux43dux438ux435-5}}
@@ -252,16 +354,64 @@ Spain            & 2004          \\ \hline
 \end{table}
 
 \begin{itemize}
+\tightlist
 \item
   Создайте вектор \texttt{country} с названиями стран, то есть вектор,
   который послужил бы первым столбцом таблицы выше.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{country }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}France\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}France\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}France\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}France\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}France\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Italy\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Italy\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Italy\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Italy\textquotesingle{}}\NormalTok{,}
+             \StringTok{\textquotesingle{}Italy\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Spain\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Spain\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Spain\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Spain\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Spain\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
 \item
   Создайте вектор \texttt{year} с годами, который мог бы послужить
   вторым столбцом таблицы выше.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{year }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}2000\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2001\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2002\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2003\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2004\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2000\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2001\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2002\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2003\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2004\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2000\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2001\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2002\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2003\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}2004\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
 \item
   Объедините полученные векторы в датафрейм \texttt{dat} таким образом,
   чтобы в итоге получилась таблица, представленная выше.
 \end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{cbind.data.frame}\NormalTok{(country,year)}
+\NormalTok{dat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    country year
+## 1   France 2000
+## 2   France 2001
+## 3   France 2002
+## 4   France 2003
+## 5   France 2004
+## 6    Italy 2000
+## 7    Italy 2001
+## 8    Italy 2002
+## 9    Italy 2003
+## 10   Italy 2004
+## 11   Spain 2000
+## 12   Spain 2001
+## 13   Spain 2002
+## 14   Spain 2003
+## 15   Spain 2004
+\end{verbatim}
 
 \hypertarget{ux437ux430ux434ux430ux43dux438ux435-6}{%
 \subsection{Задание 6}\label{ux437ux430ux434ux430ux43dux438ux435-6}}
@@ -278,19 +428,104 @@ Spain            & 2004          \\ \hline
 6.1. Используя векторы \texttt{v} и \texttt{w}, создайте:
 
 \begin{itemize}
+\tightlist
 \item
   Матрицу A, где векторы \texttt{v} и \texttt{w} являются строками
   матрицы.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(v,w)}
+\NormalTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [,1] [,2] [,3] [,4] [,5] [,6]
+## v    2    8    9   11   13    0
+## w    0    3    7    0    5    1
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
 \item
   Матрицу B, где векторы \texttt{v} и \texttt{w} являются столбцами
   матрицы.
 \end{itemize}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(v,w)}
+\NormalTok{B}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       v w
+## [1,]  2 0
+## [2,]  8 3
+## [3,]  9 7
+## [4,] 11 0
+## [5,] 13 5
+## [6,]  0 1
+\end{verbatim}
+
 6.2. Выведите на экран элемент матрицы B в 2 столбце и 3 строке.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B[}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## w 
+## 7
+\end{verbatim}
 
 6.3. Замените элемент в 4 строке второго столбца B на 0.
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B[}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{0}
+\NormalTok{B}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       v w
+## [1,]  2 0
+## [2,]  8 3
+## [3,]  9 7
+## [4,] 11 0
+## [5,] 13 5
+## [6,]  0 1
+\end{verbatim}
+
 6.4. Используя R, ответьте на следующий вопрос. В какой матрице сумма
 элементов второй строки больше?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(A[}\DecValTok{2}\NormalTok{,])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(B[}\DecValTok{2}\NormalTok{,])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11
+\end{verbatim}
+
+В матрице A
 
 \end{document}

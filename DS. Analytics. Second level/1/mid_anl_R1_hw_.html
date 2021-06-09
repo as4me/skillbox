@@ -191,9 +191,17 @@ pre code {
 <pre class="r"><code>flights_d &lt;- c(140, 150, 100, 90, 230, 240, 165)
 flights_a &lt;- c(65, 145, 80, 87, 220, 268, 216)</code></pre>
 <p>2.1. Сколько вылетов из аэропорта А было зафиксировано в среду?</p>
+<pre class="r"><code>flights_d[3]</code></pre>
+<pre><code>## [1] 100</code></pre>
 <p>2.2. На сколько число вылетов во вторник больше числа прилетов во вторник?</p>
+<pre class="r"><code>flights_d[2] - flights_a[2] </code></pre>
+<pre><code>## [1] 5</code></pre>
 <p>2.3. Во сколько раз число вылетов в воскресенье больше числа прилетов в воскресенье?</p>
+<pre class="r"><code>flights_d[7] / flights_a[7] </code></pre>
+<pre><code>## [1] 0.7638889</code></pre>
 <p>2.4. Сколько всего вылетов из аэропорта А было зафиксировано за неделю?</p>
+<pre class="r"><code>sum(flights_d)</code></pre>
+<pre><code>## [1] 1115</code></pre>
 </div>
 <div id="задание-3" class="section level2">
 <h2>Задание 3</h2>
@@ -202,24 +210,55 @@ flights_a &lt;- c(65, 145, 80, 87, 220, 268, 216)</code></pre>
 <p>3.1. Используя R, выведите ответы на вопросы.</p>
 <ul>
 <li>Сколько всего кошек было взвешено?</li>
+</ul>
+<pre class="r"><code>length(cats)</code></pre>
+<pre><code>## [1] 8</code></pre>
+<ul>
 <li>Какой вес был у самой тяжелой кошки? А у легкой?</li>
 </ul>
+<pre class="r"><code>which.min(cats)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>which.max(cats)</code></pre>
+<pre><code>## [1] 1</code></pre>
 <p>3.2. Создайте вектор <code>cats.round</code> со значениями весов кошек в килограммах, округленных в меньшую сторону.</p>
+<pre class="r"><code>cats.round &lt;- floor(cats)
+cats.round</code></pre>
+<pre><code>## [1] 4 3 1 1 2 2 3 2</code></pre>
 <p>3.3. Создайте вектор <code>cats_g</code> со значением весов кошек в граммах.</p>
+<pre class="r"><code>cats_g &lt;- sum(cats)
+cats_g</code></pre>
+<pre><code>## [1] 22.685</code></pre>
 </div>
 <div id="задание-4" class="section level2">
 <h2>Задание 4</h2>
 <p>В векторе <code>nums</code> сохранены строки, в которых записаны дробные числа с неправильным десятичным разделителем. Создайте числовой вектор <code>correct</code> с корректными значениями — правильными дробными числами.</p>
-<pre class="r"><code>nums &lt;- c(&quot;2,6&quot;, &quot;2,71&quot;, &quot;3,5&quot;, &quot;4,8&quot;, &quot;8,9&quot;, &quot;9,21&quot;)</code></pre>
+<pre class="r"><code>nums &lt;- c(&quot;2,6&quot;, &quot;2,71&quot;, &quot;3,5&quot;, &quot;4,8&quot;, &quot;8,9&quot;, &quot;9,21&quot;)
+correct &lt;-as.numeric(gsub(&quot;,&quot;, &quot;.&quot;, nums))
+correct</code></pre>
+<pre><code>## [1] 2.60 2.71 3.50 4.80 8.90 9.21</code></pre>
 </div>
 <div id="задание-5" class="section level2">
 <h2>Задание 5</h2>
 <p>Известно, что в таблице хранятся показатели по 3 странам за 5 лет. Таблица выглядит примерно так:</p>
 <ul>
-<li><p>Создайте вектор <code>country</code> с названиями стран, то есть вектор, который послужил бы первым столбцом таблицы выше.</p></li>
-<li><p>Создайте вектор <code>year</code> с годами, который мог бы послужить вторым столбцом таблицы выше.</p></li>
-<li><p>Объедините полученные векторы в датафрейм <code>dat</code> таким образом, чтобы в итоге получилась таблица, представленная выше.</p></li>
+<li>Создайте вектор <code>country</code> с названиями стран, то есть вектор, который послужил бы первым столбцом таблицы выше.</li>
 </ul>
+<pre class="r"><code>country &lt;- c(&#39;France&#39;,&#39;France&#39;,&#39;France&#39;,&#39;France&#39;,&#39;France&#39;,&#39;Italy&#39;,&#39;Italy&#39;,&#39;Italy&#39;,&#39;Italy&#39;,
+             &#39;Italy&#39;,&#39;Spain&#39;,&#39;Spain&#39;,&#39;Spain&#39;,&#39;Spain&#39;,&#39;Spain&#39;)</code></pre>
+<ul>
+<li>Создайте вектор <code>year</code> с годами, который мог бы послужить вторым столбцом таблицы выше.</li>
+</ul>
+<pre class="r"><code>year &lt;- c(&#39;2000&#39;,&#39;2001&#39;,&#39;2002&#39;,&#39;2003&#39;,&#39;2004&#39;,&#39;2000&#39;,&#39;2001&#39;,&#39;2002&#39;,&#39;2003&#39;,&#39;2004&#39;,&#39;2000&#39;,&#39;2001&#39;,&#39;2002&#39;,&#39;2003&#39;,&#39;2004&#39;)</code></pre>
+<ul>
+<li>Объедините полученные векторы в датафрейм <code>dat</code> таким образом, чтобы в итоге получилась таблица, представленная выше.</li>
+</ul>
+<pre class="r"><code>dat &lt;- cbind.data.frame(country,year)
+dat</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"France","2":"2000"},{"1":"France","2":"2001"},{"1":"France","2":"2002"},{"1":"France","2":"2003"},{"1":"France","2":"2004"},{"1":"Italy","2":"2000"},{"1":"Italy","2":"2001"},{"1":"Italy","2":"2002"},{"1":"Italy","2":"2003"},{"1":"Italy","2":"2004"},{"1":"Spain","2":"2000"},{"1":"Spain","2":"2001"},{"1":"Spain","2":"2002"},{"1":"Spain","2":"2003"},{"1":"Spain","2":"2004"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div id="задание-6" class="section level2">
 <h2>Задание 6</h2>
@@ -228,12 +267,45 @@ flights_a &lt;- c(65, 145, 80, 87, 220, 268, 216)</code></pre>
 w &lt;- c(0, 3, 7, 0, 5, 1)</code></pre>
 <p>6.1. Используя векторы <code>v</code> и <code>w</code>, создайте:</p>
 <ul>
-<li><p>Матрицу A, где векторы <code>v</code> и <code>w</code> являются строками матрицы.</p></li>
-<li><p>Матрицу B, где векторы <code>v</code> и <code>w</code> являются столбцами матрицы.</p></li>
+<li>Матрицу A, где векторы <code>v</code> и <code>w</code> являются строками матрицы.</li>
 </ul>
+<pre class="r"><code>A &lt;- rbind(v,w)
+A</code></pre>
+<pre><code>##   [,1] [,2] [,3] [,4] [,5] [,6]
+## v    2    8    9   11   13    0
+## w    0    3    7    0    5    1</code></pre>
+<ul>
+<li>Матрицу B, где векторы <code>v</code> и <code>w</code> являются столбцами матрицы.</li>
+</ul>
+<pre class="r"><code>B &lt;- cbind(v,w)
+B</code></pre>
+<pre><code>##       v w
+## [1,]  2 0
+## [2,]  8 3
+## [3,]  9 7
+## [4,] 11 0
+## [5,] 13 5
+## [6,]  0 1</code></pre>
 <p>6.2. Выведите на экран элемент матрицы B в 2 столбце и 3 строке.</p>
+<pre class="r"><code>B[3,2]</code></pre>
+<pre><code>## w 
+## 7</code></pre>
 <p>6.3. Замените элемент в 4 строке второго столбца B на 0.</p>
+<pre class="r"><code>B[4,2] &lt;- 0
+B</code></pre>
+<pre><code>##       v w
+## [1,]  2 0
+## [2,]  8 3
+## [3,]  9 7
+## [4,] 11 0
+## [5,] 13 5
+## [6,]  0 1</code></pre>
 <p>6.4. Используя R, ответьте на следующий вопрос. В какой матрице сумма элементов второй строки больше?</p>
+<pre class="r"><code>sum(A[2,])</code></pre>
+<pre><code>## [1] 16</code></pre>
+<pre class="r"><code>sum(B[2,])</code></pre>
+<pre><code>## [1] 11</code></pre>
+<p>В матрице A</p>
 </div>
 
 
