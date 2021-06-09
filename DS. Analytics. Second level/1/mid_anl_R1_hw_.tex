@@ -1,0 +1,296 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Домашнее задание},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+\hypersetup{ colorlinks = true, urlcolor = blue}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Домашнее задание}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{ux437ux430ux434ux430ux43dux438ux435-1}{%
+\subsection{Задание 1}\label{ux437ux430ux434ux430ux43dux438ux435-1}}
+
+Вычислите в R:
+
+\begin{itemize}
+\tightlist
+\item
+  \(67 ^ 3 - 112 ^ 2\);
+\item
+  \(\log(125)\);
+\item
+  \(\log_3(81)\).
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{67} \SpecialCharTok{**} \DecValTok{3} \SpecialCharTok{{-}} \DecValTok{112} \SpecialCharTok{**} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 288219
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{log}\NormalTok{(}\DecValTok{125}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.828314
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{log}\NormalTok{(}\DecValTok{81}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\hypertarget{ux437ux430ux434ux430ux43dux438ux435-2}{%
+\subsection{Задание 2}\label{ux437ux430ux434ux430ux43dux438ux435-2}}
+
+В векторе \texttt{flights\_d} сохранено число вылетов из аэропорта А, а
+в векторе \texttt{flights\_a} --- число прилетов в этот аэропорт за
+неделю.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights\_d }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{140}\NormalTok{, }\DecValTok{150}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{90}\NormalTok{, }\DecValTok{230}\NormalTok{, }\DecValTok{240}\NormalTok{, }\DecValTok{165}\NormalTok{)}
+\NormalTok{flights\_a }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{65}\NormalTok{, }\DecValTok{145}\NormalTok{, }\DecValTok{80}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{220}\NormalTok{, }\DecValTok{268}\NormalTok{, }\DecValTok{216}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+2.1. Сколько вылетов из аэропорта А было зафиксировано в среду?
+
+2.2. На сколько число вылетов во вторник больше числа прилетов во
+вторник?
+
+2.3. Во сколько раз число вылетов в воскресенье больше числа прилетов в
+воскресенье?
+
+2.4. Сколько всего вылетов из аэропорта А было зафиксировано за неделю?
+
+\hypertarget{ux437ux430ux434ux430ux43dux438ux435-3}{%
+\subsection{Задание 3}\label{ux437ux430ux434ux430ux43dux438ux435-3}}
+
+В векторе \texttt{cats} сохранены значения весов кошек в килограммах:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cats }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{4.765}\NormalTok{, }\FloatTok{3.230}\NormalTok{, }\FloatTok{1.256}\NormalTok{, }\FloatTok{1.780}\NormalTok{, }\FloatTok{2.583}\NormalTok{, }\FloatTok{2.781}\NormalTok{, }\FloatTok{3.945}\NormalTok{, }\FloatTok{2.345}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+3.1. Используя R, выведите ответы на вопросы.
+
+\begin{itemize}
+\tightlist
+\item
+  Сколько всего кошек было взвешено?
+\item
+  Какой вес был у самой тяжелой кошки? А у легкой?
+\end{itemize}
+
+3.2. Создайте вектор \texttt{cats.round} со значениями весов кошек в
+килограммах, округленных в меньшую сторону.
+
+3.3. Создайте вектор \texttt{cats\_g} со значением весов кошек в
+граммах.
+
+\hypertarget{ux437ux430ux434ux430ux43dux438ux435-4}{%
+\subsection{Задание 4}\label{ux437ux430ux434ux430ux43dux438ux435-4}}
+
+В векторе \texttt{nums} сохранены строки, в которых записаны дробные
+числа с неправильным десятичным разделителем. Создайте числовой вектор
+\texttt{correct} с корректными значениями --- правильными дробными
+числами.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nums }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"2,6"}\NormalTok{, }\StringTok{"2,71"}\NormalTok{, }\StringTok{"3,5"}\NormalTok{, }\StringTok{"4,8"}\NormalTok{, }\StringTok{"8,9"}\NormalTok{, }\StringTok{"9,21"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux437ux430ux434ux430ux43dux438ux435-5}{%
+\subsection{Задание 5}\label{ux437ux430ux434ux430ux43dux438ux435-5}}
+
+Известно, что в таблице хранятся показатели по 3 странам за 5 лет.
+Таблица выглядит примерно так:
+
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{country} & \textbf{year} \\ \hline
+France           & 2000          \\ \hline
+France           & 2001          \\ \hline
+France           & 2002          \\ \hline
+France           & 2003          \\ \hline
+France           & 2004          \\ \hline
+Italy            & 2000          \\ \hline
+Italy            & 2001          \\ \hline
+Italy            & 2002          \\ \hline
+Italy            & 2003          \\ \hline
+Italy            & 2004          \\ \hline
+Spain            & 2000          \\ \hline
+Spain            & 2001          \\ \hline
+Spain            & 2002          \\ \hline
+Spain            & 2003          \\ \hline
+Spain            & 2004          \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\item
+  Создайте вектор \texttt{country} с названиями стран, то есть вектор,
+  который послужил бы первым столбцом таблицы выше.
+\item
+  Создайте вектор \texttt{year} с годами, который мог бы послужить
+  вторым столбцом таблицы выше.
+\item
+  Объедините полученные векторы в датафрейм \texttt{dat} таким образом,
+  чтобы в итоге получилась таблица, представленная выше.
+\end{itemize}
+
+\hypertarget{ux437ux430ux434ux430ux43dux438ux435-6}{%
+\subsection{Задание 6}\label{ux437ux430ux434ux430ux43dux438ux435-6}}
+
+Даны векторы \texttt{v} и \texttt{w}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{w }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+6.1. Используя векторы \texttt{v} и \texttt{w}, создайте:
+
+\begin{itemize}
+\item
+  Матрицу A, где векторы \texttt{v} и \texttt{w} являются строками
+  матрицы.
+\item
+  Матрицу B, где векторы \texttt{v} и \texttt{w} являются столбцами
+  матрицы.
+\end{itemize}
+
+6.2. Выведите на экран элемент матрицы B в 2 столбце и 3 строке.
+
+6.3. Замените элемент в 4 строке второго столбца B на 0.
+
+6.4. Используя R, ответьте на следующий вопрос. В какой матрице сумма
+элементов второй строки больше?
+
+\end{document}
