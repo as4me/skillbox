@@ -1,0 +1,65 @@
+---
+title: "Домашняя работа модуль 2"
+author: "Andrey Sergeev"
+output: html_notebook
+---
+
+
+#Задание 1
+
+```{r}
+belki <- 10
+strelki <- 9
+
+if(belki > strelki){
+  print("Победила команда Белки")
+} else if (belki < strelki){
+    print("Победила команда Стрелки")
+} else{
+   print("Победила дружба!")
+}
+```
+
+#Задание 2
+```{r}
+temp <- c(-8, -5, 0, 2, -6, -9, -8, -12, -11, -7)
+for(i in temp){
+  if(i > -3.7){
+    cat(i,"Температура выше нормы\n")
+  }else if(i < -9.8){
+    cat(i,"Температура ниже нормы\n")
+  }else{
+    cat(i,"Температура в норме\n")
+  }
+}
+  
+```
+#Задание 3
+```{r}
+prorgess <- function(done, all){
+  round(done/all*100, 2)
+}
+prorgess(8,10)
+```
+#Задание 4
+```{r}
+assessment <- function(profit){
+  new_profit <- c()
+  for(i in profit){
+    if(i>0){
+      new_profit <- c(new_profit, 1)
+    }else{
+      new_profit <- c(new_profit, 0)
+    }
+  }
+  return(new_profit)
+}
+assessment(c(-100, 150, 3500, 720, 0, -350))
+```
+#Задание 5
+```{r}
+assessment <- function(profit){
+  as.integer(ifelse(profit, profit > 0, profit <= 0))
+}
+assessment(c(-100, 150, 3500, 720, 0, -350))
+```
